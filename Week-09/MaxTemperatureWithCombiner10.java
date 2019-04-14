@@ -21,13 +21,13 @@ public class MaxTemperatureWithCombiner {
     }
 
     Job job = new Job();
-    job.setJarByClass(MaxTemperatureWithCombiner.class);
-    job.setJobName("foggs-max-temperature-18");
+    job.setJarByClass(MaxTemperatureWithCombiner10.class);
+    job.setJobName("foggs-max-temperature-10");
     job.setNumReduceTasks(2);
 
-    //Gzip Compression
+    //Snappy Compression
     job.getConfiguration().setBoolean("mapreduce.map.output.compress",true);
-    job.getConfiguration().setClass("mapreduce.map.output.compress.codec",GzipCodec.class, CompressionCodec.class);
+    job.getConfiguration().setClass("mapreduce.map.output.compress.codec",SnappyCodec.class, CompressionCodec.class);
 
     FileInputFormat.addInputPath(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, new Path(args[1]));

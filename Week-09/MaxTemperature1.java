@@ -6,10 +6,6 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.conf.*;
-import org.apache.hadoop.io.compress.CompressionCodec;
-import org.apache.hadoop.io.compress.GzipCodec;
-import org.apache.hadoop.io.compress.SnappyCodec;
 
 public class MaxTemperature {
 
@@ -20,13 +16,8 @@ public class MaxTemperature {
     }
 
     Job job = new Job();
-    job.setJarByClass(MaxTemperature.class);
-    job.setJobName("foggs-max-temperature-8");
-    job.setNumReduceTasks(8);
-
-    //Snappy Compression
-    job.getConfiguration().setBoolean("mapreduce.map.output.compress",true);
-    job.getConfiguration().setClass("mapreduce.map.output.compress.codec",SnappyCodec.class, CompressionCodec.class);
+    job.setJarByClass(MaxTemperature1.class);
+    job.setJobName("foggs-max-temperature-1");
 
 
     FileInputFormat.addInputPath(job, new Path(args[0]));

@@ -16,9 +16,9 @@ public class MaxTemperature {
     }
 
     Job job = new Job();
-    job.setJarByClass(MaxTemperature.class);
-    job.setJobName("foggs-max-temperature-4");
-    job.setNumReduceTasks(8);
+    job.setJarByClass(MaxTemperature3.class);
+    job.setJobName("foggs-max-temperature-3");
+    job.setNumReduceTasks(4);
 
     FileInputFormat.addInputPath(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, new Path(args[1]));

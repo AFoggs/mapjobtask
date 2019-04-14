@@ -20,7 +20,7 @@ public class MaxTemperature {
     }
 
     Job job = new Job();
-    job.setJarByClass(MaxTemperature.class);
+    job.setJarByClass(MaxTemperature14.class);
     job.setJobName("foggs-max-temperature-14");
     job.setNumReduceTasks(2);
 

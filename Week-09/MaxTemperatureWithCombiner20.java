@@ -21,9 +21,9 @@ public class MaxTemperatureWithCombiner {
     }
 
     Job job = new Job();
-    job.setJarByClass(MaxTemperatureWithCombiner.class);
-    job.setJobName("foggs-max-temperature-19");
-    job.setNumReduceTasks(4);
+    job.setJarByClass(MaxTemperatureWithCombiner20.class);
+    job.setJobName("foggs-max-temperature-20");
+    job.setNumReduceTasks(8);
 
     //Gzip Compression
     job.getConfiguration().setBoolean("mapreduce.map.output.compress",true);
